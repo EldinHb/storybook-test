@@ -26,9 +26,4 @@ Primary.args = {
     primary: true
 }
 
-const TemplateLabel: Story = (args) => {
-    return (
-        <Button {...args} />
-    )
-}
-export const Secondary = TemplateLabel.bind({})
+export const Secondary = Template.bind({})
