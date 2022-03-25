@@ -42,6 +42,9 @@ const ButtonContainer = styled.div<{ primary?: boolean }>`
     &:hover {
         cursor: pointer;
     }
+    &:active {
+        background-color: ${x => x.primary ? 'darkblue' : 'lightgray'};
+    }
 `;
 
 const Text = styled(Label)`
