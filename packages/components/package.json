@@ -15,7 +15,9 @@
     "dist"
   ],
   "scripts": {
-    "dev": "babel src --out-dir dist --extensions .ts,.tsx --watch & tsc --emitDeclarationOnly --watch",
+    "dev:babel": "yarn babel src --source-maps inline --out-dir dist --extensions .ts,.tsx --watch",
+    "dev:tsc": "tsc --emitDeclarationOnly --watch",
+    "dev": "yarn npm-run-all -p -r dev:babel dev:tsc",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -39,6 +41,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.2.3",
     "babel-plugin-styled-components": "^2.0.6",
+    "npm-run-all": "^4.1.5",
     "typescript": "^4.6.2"
   },
   "dependencies": {

@@ -1,25 +1,16 @@
-import { ComponentMeta, Story } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import React from 'react';
-import { Button } from './button';
+import { Button, ButtonProps } from './button';
 
-export default {
+const meta: Meta<ButtonProps> = {
     title: 'atoms/Button',
     component: Button,
-    argTypes: {
-        text: {
-            name: 'text',
-            defaultValue: 'default value',
-            description: 'Text for button',
-            type: 'string'
-        }
+    args: {
+        text: 'Default text'
     }
-} as ComponentMeta<typeof Button>;
+};
 
-const Template: Story = (args) => {
-    return (
-        <Button {...args} />
-    )
-}
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({})
 Primary.args = {
@@ -27,3 +18,5 @@ Primary.args = {
 }
 
 export const Secondary = Template.bind({})
+
+export default meta;
